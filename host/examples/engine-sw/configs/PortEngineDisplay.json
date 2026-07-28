@@ -1,0 +1,10 @@
+{
+  "URL": "http://localhost:8080/update",
+  "Publish": [
+    "PortEngineSpec.State",
+    "PortEngineSpec.Thrust",
+    "PortEngineSpec.Temperature",
+    "PortEngineSpec.PurgeActive",
+    "PortEngineSpec.TemperatureCap"
+  ]
+}

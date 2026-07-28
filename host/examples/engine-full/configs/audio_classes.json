@@ -1,0 +1,40 @@
+{
+  "base_path": "./sounds/",
+  "classes": {
+    "music": {
+      "max_simultaneous": 1,
+      "supports_crossfade": true,
+      "crossfade_time": 2.0,
+      "max_volume": 0.5
+    },
+    "ui": {
+      "max_simultaneous": -1,
+      "supports_crossfade": false,
+      "max_volume": 0.8
+    },
+    "ambient": {
+      "max_simultaneous": -1,
+      "supports_crossfade": true,
+      "crossfade_time": 1.0,
+      "max_volume": 0.7
+    },
+    "event": {
+      "max_simultaneous": -1,
+      "supports_crossfade": false,
+      "max_volume": 0.8
+    },
+    "voice": {
+      "max_simultaneous": 1,
+      "supports_priority": true,
+      "post_pause": 0.3,
+      "max_volume": 1.0,
+      "dedupe": true
+    },
+    "alerts": {
+      "max_simultaneous": -1,
+      "supports_crossfade": false,
+      "max_volume": 0.8
+    }
+  },
+  "reset_fadeout_time": 5.0
+}

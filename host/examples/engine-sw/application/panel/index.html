@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<!--
+  A stand-in for a hardware panel. This page is served by the APPLICATION's small
+  input server (see example_app.py), not by the display server. Its widgets POST
+  to /input, where the app stores them as the SimPanel class attributes the device
+  reads. In a hardware build this page and that server do not exist; the device
+  reads the real board instead. The display server never sees any of this.
+-->
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Port Engine panel</title>
+  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="/controls.css">
+</head>
+<body>
+  <div class="panel">
+    <div class="header">
+      <h1>PORT ENGINE PANEL</h1>
+    </div>
+
+    <p class="note">
+      A stand-in for a hardware panel. The application (not the display server) serves this page and
+      reads what it posts, exactly as it would read a real board. Open the display at
+      <a href="http://localhost:8080/" target="_blank" rel="noopener">http://localhost:8080/</a> in
+      another tab to watch the values land; run the app with <code>--audio</code> for blips on
+      transitions.
+    </p>
+
+    <div class="ctl">
+      <label>Throttle &rarr; Thrust <span class="sim">(simulates an AN08 analog pot)</span></label>
+      <input type="range" id="throttle" min="0" max="8000000" step="50000" value="0">
+      <span class="val" id="throttle-val">0 N</span>
+    </div>
+
+    <div class="ctl">
+      <label>State <span class="sim">(simulates an SW14 toggle + scram button)</span></label>
+      <div class="btns" id="state-btns">
+        <button data-state="ONLINE">ONLINE</button>
+        <button data-state="OFFLINE">OFFLINE</button>
+        <button data-state="SCRAMMED" class="danger">SCRAM</button>
+      </div>
+    </div>
+
+    <div class="ctl">
+      <label>Purge <span class="sim">(simulates an SW14 button)</span></label>
+      <button id="purge" class="danger">PURGE</button>
+    </div>
+
+    <div class="ctl">
+      <label>Temp cap &rarr; TemperatureCap <span class="sim">(simulates a QD04 encoder)</span></label>
+      <input type="range" id="tempcap" min="100" max="200" step="1" value="150">
+      <span class="val" id="tempcap-val">150 MK</span>
+    </div>
+  </div>
+
+  <script src="/controls.js"></script>
+</body>
+</html>

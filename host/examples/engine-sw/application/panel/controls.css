@@ -1,0 +1,61 @@
+/* Soft controls page: builds on the display's style.css for colors and fonts. */
+
+.note {
+  font-size: 12px;
+  color: #789;
+  line-height: 1.55;
+  background: #0d141c;
+  border: 1px solid #1e2a35;
+  border-radius: 6px;
+  padding: 10px 12px;
+  margin: 0 0 20px;
+}
+.note a { color: #6cf; }
+.note code { color: #9cf; }
+
+.ctl {
+  padding: 14px 0;
+  border-bottom: 1px dashed #1e2a35;
+}
+.ctl > label {
+  display: block;
+  color: #8aa;
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  margin-bottom: 8px;
+}
+.ctl > label .sim {
+  color: #567;
+  font-size: 11px;
+  font-weight: normal;
+  letter-spacing: 0;
+}
+.ctl input[type=range] {
+  width: 100%;
+  accent-color: #6cf;
+}
+.ctl .val {
+  display: inline-block;
+  margin-top: 6px;
+  color: #6cf;
+  font-size: 14px;
+}
+
+.btns { display: flex; gap: 8px; }
+.btns button, #purge {
+  flex: 1;
+  padding: 10px;
+  background: #16202b;
+  color: #cde;
+  border: 1px solid #2a3948;
+  border-radius: 6px;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 13px;
+  letter-spacing: 0.06em;
+  transition: background .12s, border-color .12s, color .12s;
+}
+#purge { width: 100%; }
+.btns button:hover, #purge:hover { border-color: #6cf; }
+.btns button.active { background: #6cf; color: #061019; border-color: #6cf; }
+.btns button.danger.active, #purge.active { background: #f66; color: #1a0606; border-color: #f66; }

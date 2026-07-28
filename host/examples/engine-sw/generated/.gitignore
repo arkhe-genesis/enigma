@@ -1,0 +1,5 @@
+# Generated code and docs are normally build artifacts. In this example they are
+# checked in ON PURPOSE (see README.md here) so the config -> generated shape is
+# browsable without running the toolchain. Only transient caches are ignored.
+__pycache__/
+*.pyc

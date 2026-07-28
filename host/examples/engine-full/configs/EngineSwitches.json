@@ -1,0 +1,42 @@
+{
+  "comment": "SW14 switch board. Run/Standby is a momoffmom toggle (up=ONLINE, down=OFFLINE, center rests and stays silent, so the last flick sticks). Scram and Purge are momentary buttons. The online/offline/scram schemes recolor the toggle's resting LED to show the latched state; the disabled scheme reds out a locked control.",
+  "name": "EngineControl",
+  "controls": [
+    {
+      "control_num": 1,
+      "name": "RunStandby",
+      "desc": "Run / Standby: flick up = ONLINE, flick down = OFFLINE (center rests, no report)",
+      "type": "momoffmom",
+      "state_0": { "report": 0, "colors": "#202020" },
+      "state_1": { "report": 1, "value": "online", "colors": "#00FF00" },
+      "state_2": { "report": 1, "value": "offline", "colors": "#302000" },
+      "schemes": {
+        "online":  { "state_0": { "colors": "#00FF00" } },
+        "offline": { "state_0": { "colors": "#302000" } },
+        "scram":   { "state_0": { "colors": "#FF0000" } }
+      }
+    },
+    {
+      "control_num": 2,
+      "name": "Scram",
+      "desc": "Scram the reactor (momentary)",
+      "type": "button",
+      "state_0": { "report": 0, "colors": "#200000" },
+      "state_1": { "report": 1, "value": "scram", "colors": "#FF0000", "hold_ms": 500 },
+      "schemes": {
+        "disabled": { "state_0": { "colors": "#600000" }, "state_1": { "colors": "#600000" } }
+      }
+    },
+    {
+      "control_num": 3,
+      "name": "Purge",
+      "desc": "Antimatter purge (active while held)",
+      "type": "button",
+      "state_0": { "report": 1, "colors": "#202020" },
+      "state_1": { "report": 1, "value": "purge", "colors": "#FF00FF" },
+      "schemes": {
+        "disabled": { "state_0": { "colors": "#600000" }, "state_1": { "colors": "#600000" } }
+      }
+    }
+  ]
+}

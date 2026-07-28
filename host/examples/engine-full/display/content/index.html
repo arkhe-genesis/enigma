@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Port Engine</title>
+  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="/lib/debug-panel.css">
+</head>
+<body>
+  <div class="panel">
+    <div class="header">
+      <h1>PORT ENGINE</h1>
+      <div id="conn-dot" class="lost" title="connection status"></div>
+    </div>
+
+    <!--
+      Declarative bindings only. The Enigma client library scans these
+      data-attributes on load and updates the elements automatically as
+      spec values change.
+    -->
+    <div class="row">
+      <div class="label">State</div>
+      <div class="readout"
+           data-bind="PortEngineSpec.State"
+           data-class-bind="PortEngineSpec.State"
+           data-class-prefix="state-">--</div>
+    </div>
+
+    <div class="row">
+      <div class="label">Thrust</div>
+      <div class="readout"
+           data-bind="PortEngineSpec.Thrust"
+           data-unit="N"
+           data-color="#f66:>=5600000, #fc0:>=2000000, #6cf:*">--</div>
+    </div>
+
+    <div class="row">
+      <div class="label">Temperature</div>
+      <div class="readout"
+           data-bind="PortEngineSpec.Temperature"
+           data-decimals="0"
+           data-color="#f66:>=150, #fc0:>=125, #6cf:*"><span>--</span> <span class="unit">MK</span></div>
+    </div>
+
+    <div class="row">
+      <div class="label">Temp cap</div>
+      <div class="readout"
+           data-bind="PortEngineSpec.TemperatureCap"
+           data-decimals="0"><span>--</span> <span class="unit">MK</span></div>
+    </div>
+
+    <!--
+      Programmatic label - see main.js. Reads State and PurgeActive
+      together and derives an operational-mode string. Declarative
+      bindings can't express multi-value logic, so this belongs in JS.
+    -->
+    <div class="row">
+      <div class="label">Operational mode</div>
+      <div id="operational-mode" class="readout">--</div>
+    </div>
+
+    <!--
+      Show/hide binding. Only visible when PurgeActive is true.
+    -->
+    <div class="row alert" data-show="PortEngineSpec.PurgeActive" data-eq="true">
+      [WARN] PURGE ACTIVE
+    </div>
+  </div>
+
+  <div class="enigma-debug-hint">Click the gear to inspect subscribed SpecVars &rarr;</div>
+
+  <script src="/lib/socket.io.min.js"></script>
+  <script src="/lib/enigma.js"></script>
+  <script src="/lib/debug-panel.js"></script>
+  <script src="/main.js"></script>
+</body>
+</html>

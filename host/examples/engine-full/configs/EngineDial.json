@@ -1,0 +1,33 @@
+{
+  "comment": "QD04 encoder board. One control: the temperature-cap dial on channel 1. Absolute mode, 23-LED ring shows the setpoint as a filled bar. The disabled scheme reds the ring out when the reactor is not ONLINE.",
+  "name": "EngineControl",
+  "controls": [
+    {
+      "control_num": 1,
+      "name": "TempCap",
+      "desc": "Reactor temperature ceiling (encoder with LED ring)",
+      "num_leds": 23,
+      "button_reports": 0,
+      "min_value": 100.0,
+      "max_value": 200.0,
+      "default_value": 150.0,
+      "units": "MK",
+      "dial": {
+        "background_mode": "gradient",
+        "start_color": "#000020",
+        "end_color": "#060000",
+        "active_render": "replace",
+        "overlay_color": "#000800"
+      },
+      "schemes": {
+        "disabled": {
+          "background_mode": "gradient",
+          "start_color": "#100000",
+          "end_color": "#100000",
+          "active_render": "replace",
+          "overlay_color": "#400000"
+        }
+      }
+    }
+  ]
+}

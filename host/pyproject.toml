@@ -1,0 +1,36 @@
+# SPDX-FileCopyrightText: 2026 Kevin Kelm (https://madgoatlabs.com)
+# SPDX-License-Identifier: MIT
+
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "enigma-console"         # PyPI distribution name; the import package stays `enigma`
+version = "1.0.0"
+description = "Framework for physical control consoles: USB-HID control boards (switches, encoders, analog), LED indicators, WebSocket display publishing, and a layered audio engine, for simulators, escape rooms, and interactive installations."
+readme = "README.md"
+requires-python = ">=3.10"
+license = "MIT"
+authors = [{ name = "Kevin Kelm" }]
+keywords = ["hid", "hardware", "console", "control-surface", "display", "audio", "simpit", "panel", "encoder", "escape-room"]
+
+[project.urls]
+Homepage = "https://madgoatlabs.com"
+
+# Core runtime deps. Audio playback is optional (install with: pip install .[audio]).
+# python-socketio's asyncio_client extra pulls aiohttp, which DisplayManager needs
+# to open its outbound WebSocket connections to displays.
+dependencies = [
+    "hid",
+    "pyusb",
+    "python-socketio[asyncio_client]",
+]
+
+[project.optional-dependencies]
+audio = ["pyaudio", "soundfile", "pydub"]
+display = ["flask", "flask-socketio"]
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["enigma*"]

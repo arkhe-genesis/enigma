@@ -1,0 +1,14 @@
+{
+  "comment": "AN08 analog board. One control: the throttle potentiometer on channel 1, mapped across the full thrust range.",
+  "name": "EngineControl",
+  "controls": [
+    {
+      "control_num": 1,
+      "name": "Throttle",
+      "desc": "Engine throttle (potentiometer, full 0-3.3 V travel)",
+      "deadband": 2,
+      "min_value": 0.0,
+      "max_value": 8000000.0
+    }
+  ]
+}

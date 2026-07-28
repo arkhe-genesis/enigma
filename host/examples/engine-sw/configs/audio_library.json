@@ -1,0 +1,22 @@
+{
+  "events": {
+    "button_click": {
+      "class": "ui",
+      "audio": "ui/clicks",
+      "volume": 0.7,
+      "playback_mode": "replace"
+    },
+    "switch_toggle": {
+      "class": "ui",
+      "audio": "ui/toggles",
+      "volume": 0.7,
+      "playback_mode": "replace"
+    },
+    "knob_adjust": {
+      "class": "ui",
+      "audio": "ui/knobs",
+      "volume": 0.7,
+      "playback_mode": "replace"
+    }
+  }
+}

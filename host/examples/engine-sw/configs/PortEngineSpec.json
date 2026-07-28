@@ -1,0 +1,38 @@
+{
+  "State": {
+    "type": "enum",
+    "values": ["ONLINE", "OFFLINE", "SCRAMMED"],
+    "default": "ONLINE",
+    "desc": "Reactor state"
+  },
+  "Thrust": {
+    "type": "number",
+    "desc": "Current output thrust in newtons",
+    "default": 0.0,
+    "constants": {
+      "MIN": 0.0,
+      "MAX": 8000000.0
+    }
+  },
+  "Temperature": {
+    "type": "number",
+    "desc": "Reactor temperature in million-kelvins",
+    "default": 100.0,
+    "constants": {
+      "NOMINAL": 100.0,
+      "CAUTION": 125.0,
+      "CRITICAL": 150.0
+    }
+  },
+  "PurgeActive": {
+    "type": "bool",
+    "desc": "true if an antimatter purge is in process",
+    "default": false
+  },
+  "TemperatureCap": {
+    "type": "number",
+    "desc": "Operator-set ceiling for reactor temperature in million-kelvins",
+    "default": 150.0,
+    "constants": { "MIN": 100.0, "MAX": 200.0 }
+  }
+}
