@@ -99,7 +99,24 @@ void loop() {
   logger.update();
   
   // Read switches and update LEDs
-  // TODO: Implement switch polling and LED animation
+  for (int i = 0; i < config.getSwitchCount(); i++) {
+    const SwitchConfig* sw = config.getSwitch(i);
+    if (sw && sw->pinSwitch > 0) {
+      int state = digitalRead(sw->pinSwitch);
+
+      // Basic state reporting
+      if (state == LOW) { // Assuming active low
+        // Just as a simple test
+        digitalWrite(sw->pinLedR, HIGH);
+        digitalWrite(sw->pinLedG, LOW);
+        digitalWrite(sw->pinLedB, LOW);
+      } else {
+        digitalWrite(sw->pinLedR, LOW);
+        digitalWrite(sw->pinLedG, LOW);
+        digitalWrite(sw->pinLedB, LOW);
+      }
+    }
+  }
   
   delay(10);
 }
