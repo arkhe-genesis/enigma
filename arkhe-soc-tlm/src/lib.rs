@@ -217,3 +217,5 @@ pub mod power;
 pub mod qpl;
 pub mod soc;
 pub mod sram;
+pub mod arkhe_fountain_encoder;
+pub mod arkhe_fountain_decoder;
