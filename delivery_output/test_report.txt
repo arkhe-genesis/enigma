@@ -1,0 +1,8 @@
+Files: 3
+Dirs: 1
+Total Size: 360
+Largest: /app/test_fixture_dir/file2.txt (250)
+
+/app/test_fixture_dir/file2.txt,250
+/app/test_fixture_dir/file1.txt,100
+/app/test_fixture_dir/subdir/file3.txt,10
