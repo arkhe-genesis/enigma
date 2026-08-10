@@ -2,3 +2,6 @@
 lake-packages/
 lake-manifest.json
 arkhe-soc-tlm/target/
+arkhe-n-v1.4/
+arkhe-n-v1.6/
+target/

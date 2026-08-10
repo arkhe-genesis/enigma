@@ -1,0 +1,7 @@
+[workspace]
+members = [
+    "safe-core-evidence",
+    "safe-core-policy",
+    "safe-core-orchestrator",
+    "arkhe-n-v1.6",
+]

@@ -15,12 +15,6 @@ license = "MIT"
 authors = [{ name = "Kevin Kelm" }]
 keywords = ["hid", "hardware", "console", "control-surface", "display", "audio", "simpit", "panel", "encoder", "escape-room"]
 
-[project.urls]
-Homepage = "https://madgoatlabs.com"
-
-# Core runtime deps. Audio playback is optional (install with: pip install .[audio]).
-# python-socketio's asyncio_client extra pulls aiohttp, which DisplayManager needs
-# to open its outbound WebSocket connections to displays.
 dependencies = [
     "hid",
     "pyusb",

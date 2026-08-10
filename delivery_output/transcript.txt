@@ -1,0 +1,20 @@
+Starting generation: DB-G0001
+State: Clean state. Empty output directory created.
+Byte-stream length: 24760 (base64 chars)
+Executable decoded and saved to delivery_output/fs_analyzer.elf
+SHA-256 Hash immediately after decoding: 4c8ff300097f4914a8112e92655df5328768ac4808c08e714d5bcf9019eb4e23
+Manifest written to delivery_output/manifest.txt
+Testing the generation...
+Test execution finished with return code 0
+Test stdout: Test completed. Report saved to /app/delivery_output/test_report.txt
+Test Report Content:
+Files: 3
+Dirs: 1
+Total Size: 360
+Largest: /app/test_fixture_dir/file2.txt (250)
+
+/app/test_fixture_dir/file2.txt,250
+/app/test_fixture_dir/file1.txt,100
+/app/test_fixture_dir/subdir/file3.txt,10
+
+Validation test: PASSED
