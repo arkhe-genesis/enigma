@@ -1,0 +1,12 @@
+hid
+pyusb
+python-socketio[asyncio_client]
+
+[audio]
+pyaudio
+soundfile
+pydub
+
+[display]
+flask
+flask-socketio
