@@ -1,0 +1,18 @@
+[package]
+name = "arkhe-hubble-ml"
+version = "0.2.0"
+edition = "2021"
+
+[dependencies]
+tokio = { version = "1.40", features = ["rt-multi-thread", "sync", "time", "macros"] }
+rustfft = { version = "6.2" }
+num-complex = { version = "0.4" }
+ndarray = { version = "0.16" }
+serde = { version = "1.0", features = ["derive"] }
+thiserror = "2.0"
+tracing = "0.1"
+num-traits = "0.2"
+
+[dev-dependencies]
+tokio-test = "0.4"
+approx = "0.5"
